@@ -1,0 +1,21 @@
+name = "butler"
+description = "A robust, elegant white theme"
+license = "MIT"
+homepage = "https://github.com/the-wall/butler"
+min_version = "0.4.0"
+demo = "https://gutenberg-even.netlify.com"
+
+[extra]
+butler_nav_bar = [
+    {url = "$BASE_URL/blog", name = "Blog"},
+    {url = "$BASE_URL/about", name = "About"},
+]
+
+[author]
+name = "Shaleen Jain"
+homepage = "https://shaleenjain.com"
+
+[original]
+author =  "harshjv"
+homepage = "http://the-wall.github.io"
+repo = "https://github.com/the-wall/butler"

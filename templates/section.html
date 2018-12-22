@@ -1,0 +1,15 @@
++++
+template: "default.html"
++++
+
+<article class="page{% if page.text_center %} text-center {% endif %}">
+  <header class="page-header">
+  {% if page.custom_header %}
+    <h1 class="page-title">{{ page.custom_header }}</h1>
+  {% else %}
+    <h1 class="page-title">{{ page.title }}</h1>
+  {% endif %}
+  </header>
+
+  {{ content }}
+</article>

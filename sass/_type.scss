@@ -1,0 +1,118 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+  line-height: 1.25;
+  color: $heading-color;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  margin-top: 2.5rem;
+  font-size: 2rem;
+}
+
+h2 {
+  margin-top: 2.2rem;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin-top: 1.6rem;
+  font-size: 1.25rem;
+}
+
+h4, h5, h6 {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+li > p {
+  margin-bottom: 0.5rem;
+}
+
+strong {
+  color: $strong-color;
+}
+
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: .5rem;
+}
+
+small {
+  color: $small-color;
+}
+
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid $divider-color;
+  border-bottom: 1px solid #fff;
+}
+
+abbr {
+  font-weight: bold;
+  color: $abbr-color;
+  text-decoration-color: $abbr-border-color;
+
+  &[title] {
+    cursor: help;
+    border-bottom: 2px dotted $abbr-border-color;
+  }
+}
+
+blockquote {
+  padding: .5rem 1rem;
+  margin: .8rem 0;
+  color: $blockquote-color;
+  border-left: .25rem solid $blockquote-border-color;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $blockquote-color;
+  }
+
+  @media (min-width: $min-width-breakpoint) {
+    padding-right: 5rem;
+    padding-left: 1.25rem;
+  }
+}
+
+sup[id^="fnref:"] {
+  border-bottom: 1px solid #000;
+}
+
+a[href^="#fn:"],
+a[href^="#fnref:"] {
+  display: inline-block;
+  margin-left: .1rem;
+  font-weight: bold;
+  border-bottom: 0;
+}
+
+.footnotes {
+  margin-top: 2rem;
+  font-size: 85%;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}

@@ -1,0 +1,38 @@
+/**
+ * Link placement and hover behavior.
+ */
+
+.anchorjs-link {
+  color: $link-color !important;
+  text-decoration: none !important; /* do not underline */
+  border-bottom: none;
+  margin-right: 1.5em;
+  
+   &:hover,
+   &:focus {
+     background-color: inherit;
+     color: inherit;
+   }
+}
+
+@media (max-width: $min-width-breakpoint ) {
+  /* Do not display AnchorJS icon on less than 768px view point */
+  .anchorjs-link {
+    display: none;
+  }
+}
+
+h2, h3, h4, h5, h6 {
+  &:hover > .anchorjs-link {
+      opacity: .75;
+      /* To fade links as they appear, change transition-property from 'color' to 'all' */
+      -webkit-transition: color .16s linear;
+      transition: color .16s linear;
+  }
+ 
+  &:hover > .anchorjs-link:hover,
+  &:hover > .anchorjs-link:focus {
+      text-decoration: none !important; /* do not underline */
+      opacity: 1;
+  }
+}

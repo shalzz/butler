@@ -1,0 +1,25 @@
++++
+template: "default.html"
++++
+
+<article class="post">
+  <header class="post-header">
+    <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
+        {% if page.last_modified_at %}
+          <small>
+            (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date_to_string }}</time>)
+          </small>
+        {% endif %}
+        <small>
+            · {% include read_time.html content=content %}
+        </small>
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  {{ content }}
+</article>
+
+{% include post_message.html %}
+{% include disqus.html %}
+{% include related.html %}
+{% asset anchor-options.js @inline %}

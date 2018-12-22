@@ -1,0 +1,29 @@
+.post {
+  .post-header {
+    margin-bottom: 2rem;
+
+    .post-title {
+      margin-top: 0.3rem;
+      margin-bottom: 0.4rem;
+    }
+  }
+}
+
+.page {
+  .page-header {
+    margin-bottom: 2rem;
+
+    .page-title {
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+.post-date {
+  font-size: 85%;
+  color: $post-date-color;
+}
+
+.index {
+  margin: 2rem;
+}
