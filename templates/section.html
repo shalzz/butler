@@ -1,15 +1,15 @@
-+++
-template: "default.html"
-+++
+{% extends "index.html" %}
 
-<article class="page{% if page.text_center %} text-center {% endif %}">
+{% block content %}
+<article class="page">
   <header class="page-header">
-  {% if page.custom_header %}
-    <h1 class="page-title">{{ page.custom_header }}</h1>
+  {% if section.extra.custom_header %}
+    <h1 class="page-title">{{ section.extra.custom_header }}</h1>
   {% else %}
-    <h1 class="page-title">{{ page.title }}</h1>
+    <h1 class="page-title">{{ section.title }}</h1>
   {% endif %}
   </header>
 
-  {{ content }}
+  {{ section.content | safe }}
 </article>
+{% endblock content %}

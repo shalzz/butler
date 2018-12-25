@@ -1,25 +1,57 @@
-+++
-template: "default.html"
-+++
+{% extends "index.html" %}
+{% import "macros.html" as macros %}
+
+{% block title %}
+  {{ page.title }}
+{% endblock title %}
+
+{% block description %}
+    {% if page.excerpt %}
+      <meta name="description" content="{{ page.excerpt | strip_html }}">
+    {% elif page.description %}
+      <meta name="description" content="{{ page.description }}">
+    {% endif %}
+
+    <meta name="keywords" content="{{ config.extra.keywords ~ ', ' ~ page.extra.tags }}">
+{% endblock description %}
+
+{% block og_card %}
+    {{ super() }}
+    <meta name="twitter:title" content="{{ page.title }} &mdash; {{ config.title }}">
+    <meta property="og:title" content="{{ page.title }}">
+{% endblock og_card %}
+
+{% block og_image %}
+    {% if page.image %}
+        <meta property="og:image" content="{{ get_url(path=page.image, cachebust=true) }}">
+    {% endif %}
+{% endblock og_image %}
+
+{% block content %}
 
 <article class="post">
   <header class="post-header">
-    <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
+    <time datetime="{{ page.date }}" class="post-date">{{ page.date  }}</time>
         {% if page.last_modified_at %}
           <small>
             (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date_to_string }}</time>)
           </small>
         {% endif %}
         <small>
-            · {% include read_time.html content=content %}
+            · {{ page.reading_time }}
         </small>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
 
-  {{ content }}
+  {{ page.content | safe }}
 </article>
 
-{% include post_message.html %}
-{% include disqus.html %}
-{% include related.html %}
-{% asset anchor-options.js @inline %}
+
+{% block post_message %}
+  <p>Got any questions or comments? Drop me a message on <a href="{{ config.extra.author.twitter.link }}" rel="nofollow">Twitter @{{ config.extra.author.twitter.username }}</a> or comment below.</p>
+{% endblock post_message %}
+
+{# include disqus.html #}
+{# include related.html #}
+
+{% endblock content %}
