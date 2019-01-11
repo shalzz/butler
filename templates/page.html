@@ -36,11 +36,11 @@
     <time datetime="{{ page.date }}" class="post-date">
         {{ page.date | date(format="%d %b %Y") }}
     </time>
-        {% if page.last_modified_at %}
+        {% if page.extra.last_modified_at %}
           <small>
             (Updated:
-            <time datetime="{{ page.last_modified_at | date(format="%Y-%m-%dT%H:%M:%S") }}" itemprop="dateModified">
-                {{ page.last_modified_at | date(format="%d %b %Y") }}
+            <time datetime="{{ page.extra.last_modified_at | date(format="%Y-%m-%dT%H:%M:%S") }}" itemprop="dateModified">
+                {{ page.extra.last_modified_at | date(format="%d %b %Y") }}
             </time>)
           </small>
         {% endif %}
