@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -89,7 +87,7 @@
     {% block header %}
         <header class="masthead">
           <h3 class="masthead-title">
-            <a href="{{ config.base_url }}">Shaleen Jain</a>
+            <a href="{{ config.base_url }}">{{ config.extra.author.name }}</a>
           </h3>
           <nav class="masthead-nav">
             {% for node in config.extra.butler_nav_bar %}
@@ -102,7 +100,7 @@
 
     <main class="content">
         {% block content %}
-            <article class="page">
+            <article class="index {% if section.extra.text_center %} text-center {% endif %}">
               {{ section.content | safe }}
             </article>
         {% endblock content %}

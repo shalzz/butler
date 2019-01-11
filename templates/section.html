@@ -3,13 +3,13 @@
 {% block content %}
 <article class="page">
   <header class="page-header">
-  {% if section.extra.custom_header %}
-    <h1 class="page-title">{{ section.extra.custom_header }}</h1>
-  {% else %}
+  {% if not section.extra.hide_title %}
     <h1 class="page-title">{{ section.title }}</h1>
   {% endif %}
   </header>
 
-  {{ section.content | safe }}
+  {% block seccontent %}
+    {{ section.content | safe }}
+  {% endblock seccontent %}
 </article>
 {% endblock content %}

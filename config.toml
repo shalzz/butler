@@ -12,4 +12,19 @@ highlight_code = true
 build_search_index = false
 
 [extra]
-# Put all your custom variables here
+butler_nav_bar = [
+    {url = "$BASE_URL/blog", name = "Blog"},
+]
+
+keywords = "zola theme"
+
+[extra.author]
+name = "The Wall"
+twitter.username = "shalzzj"
+twitter.link = "https://twitter.com/shalzzj"
+
+[extra.disqus]
+shortname = "shalzz"
+
+[extra.google_analytics]
+id = "UA-4XXXXXXX-X"

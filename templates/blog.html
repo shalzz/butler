@@ -1,34 +1,38 @@
 {% extends "section.html" %}
 
+{% block seccontent %}
 {% for post in section.pages %}
-  {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-  {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+  {% set this_year = post.date | date(format="%Y") %}
+  {% if post.data.earlier %}
+    {% set pre_year = post.date.earlier | date(format="%Y") %}
+  {% endif %}
 
-  {% if forloop.first %}
+  {% if loop.first %}
     <h2 class="text-right">{{this_year}}</h2>
     <nav class="posts">
   {% endif %}
 
     <div class="posts-item">
-      <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
-          {{ post.date | date: "%B %d" }} 
-          · {% include read_time.html content=post.content %}
+      <time class="post-date" datetime="{{ post.date | date(format="%Y-%m-%dT%H:%M:%S") }}">
+          {{ post.date | date(format="%B %d") }}
+          · {{ post.reading_time }}
       </time>
-      <h3><a href="{{ post.url | prepend:site.url }}">{{ post.title }}</a></h3>
-      {% if post.image %}
-        {% include asset.html src=post.image %}
+      <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+      {% if post.extra.image %}
+        {{ post.extra.image }}
+      {% elif post.extra.summary %}
+        {{ post.extra.summary }}
       {% endif %}
-      {{ post.excerpt }}
     </div>
 
-  {% if forloop.last %}
+  {% if loop.last %}
     </nav>
   {% else %}
-    {% if this_year != next_year %}
+    {% if this_year != pre_year %}
       </nav>
-      <h2 class="text-right">{{next_year}}</h2>
+      <h2 class="text-right">{{pre_year}}</h2>
       <nav class="posts">
     {% endif %}
   {% endif %}
 {% endfor %}
-
+{% endblock seccontent %}
