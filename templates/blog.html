@@ -22,7 +22,7 @@
       {% if post.extra.image %}
         {{ post.extra.image }}
       {% else %}
-        {{ post.summary | safe }}
+        {{ post.summary | safe | striptags }}
       {% endif %}
     </div>
 
