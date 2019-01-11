@@ -21,8 +21,8 @@
       <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
       {% if post.extra.image %}
         {{ post.extra.image }}
-      {% elif post.extra.summary %}
-        {{ post.extra.summary | safe }}
+      {% else %}
+        {{ post.summary | safe }}
       {% endif %}
     </div>
 
