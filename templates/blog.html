@@ -4,8 +4,8 @@
 {% block seccontent %}
 {% for post in section.pages %}
   {% set this_year = post.date | date(format="%Y") %}
-  {% if post.data.earlier %}
-    {% set pre_year = post.date.earlier | date(format="%Y") %}
+  {% if post.earlier.date %}
+    {% set pre_year = post.earlier.date | date(format="%Y") %}
   {% endif %}
 
   {% if loop.first %}

@@ -21,11 +21,11 @@ keywords = "zola theme"
 
 [extra.author]
 name = "The Wall"
-twitter.username = "shalzzj"
-twitter.link = "https://twitter.com/shalzzj"
+twitter.username = "username"
+twitter.link = "https://twitter.com/username"
 
 [extra.disqus]
-shortname = "shalzz"
+shortname = "shortname"
 
 [extra.google_analytics]
 id = "UA-4XXXXXXX-X"
