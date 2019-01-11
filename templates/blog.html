@@ -1,4 +1,5 @@
 {% extends "section.html" %}
+{% import "macros.html" as macros %}
 
 {% block seccontent %}
 {% for post in section.pages %}
@@ -15,13 +16,13 @@
     <div class="posts-item">
       <time class="post-date" datetime="{{ post.date | date(format="%Y-%m-%dT%H:%M:%S") }}">
           {{ post.date | date(format="%B %d") }}
-          · {{ post.reading_time }}
+            · {{ macros::read_time(words=post.word_count) }}
       </time>
       <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
       {% if post.extra.image %}
         {{ post.extra.image }}
       {% elif post.extra.summary %}
-        {{ post.extra.summary }}
+        {{ post.extra.summary | safe }}
       {% endif %}
     </div>
 

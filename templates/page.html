@@ -31,14 +31,19 @@
 
 <article class="post">
   <header class="post-header">
-    <time datetime="{{ page.date }}" class="post-date">{{ page.date  }}</time>
+    <time datetime="{{ page.date }}" class="post-date">
+        {{ page.date | date(format="%d %b %Y") }}
+    </time>
         {% if page.last_modified_at %}
           <small>
-            (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date_to_string }}</time>)
+            (Updated:
+            <time datetime="{{ page.last_modified_at | date(format="%Y-%m-%dT%H:%M:%S") }}" itemprop="dateModified">
+                {{ page.last_modified_at | date(format="%d %b %Y") }}
+            </time>)
           </small>
         {% endif %}
         <small>
-            · {{ page.reading_time }}
+            · {{ macros::read_time(words=page.word_count) }}
         </small>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>

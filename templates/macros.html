@@ -1,5 +1,9 @@
-{% macro read_time(content) %}
+{% macro read_time(words) %}
     <span class="reading-time" title="Estimated read time">
-      zero
+      {% if words < 530 %}
+        1 min read
+      {% else %}
+        {{ words / 265 | round }} min read
+      {% endif %}
     </span>
 {% endmacro read_time %}
