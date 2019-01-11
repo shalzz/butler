@@ -13,6 +13,7 @@ butler_nav_bar = [
 [author]
 name = "Shaleen Jain"
 homepage = "https://shaleenjain.com"
+repo = "https://github.com/shalzz/butler"
 
 [original]
 author =  "harshjv"
