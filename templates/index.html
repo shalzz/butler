@@ -42,8 +42,8 @@
         <meta property="og:url" content="{{ current_url }}">
         <meta property="og:site_name" content="{{ config.title }}">
 
-        {% if page.card %}
-        <meta name="twitter:card" content="{{ page.card }}">
+        {% if page.extra.card %}
+        <meta name="twitter:card" content="{{ page.extra.card }}">
         {% else %}
         <meta name="twitter:card" content="summary">
         {% endif %}
