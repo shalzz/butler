@@ -1,0 +1,25 @@
+code,
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+code {
+  padding: .25em .5em;
+  font-size: .75em;
+  color: $code-color;
+  background-color: $code-background-color;
+  border-radius: $code-radius;
+  border: 1px solid $code-border-color;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+pre code {
+  padding: 0;
+  font-size: 85%;
+  color: inherit;
+  background-color: transparent;
+}
