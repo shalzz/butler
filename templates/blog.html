@@ -4,6 +4,7 @@
 {% block seccontent %}
 {% for post in section.pages %}
   {% set this_year = post.date | date(format="%Y") %}
+  {% set pre_year = "" %}
   {% if post.earlier.date %}
     {% set pre_year = post.earlier.date | date(format="%Y") %}
   {% endif %}
@@ -20,7 +21,8 @@
       </time>
       <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
       {% if post.extra.image %}
-        {{ post.extra.image }}
+        <img src="{{ resize_image(path=post.path ~ post.extra.image,
+                        width=1600, height=1600, op="fit" ) }}" />
       {% else %}
         {{ post.summary | safe | striptags }}
       {% endif %}
