@@ -23,9 +23,8 @@
       {% if post.extra.image %}
         <img src="{{ resize_image(path=post.path ~ post.extra.image,
                         width=1600, height=1600, op="fit" ) }}" />
-      {% else %}
-        {{ post.summary | safe | striptags }}
       {% endif %}
+        {{ post.summary | safe | striptags }}
     </div>
 
   {% if loop.last %}
