@@ -1,14 +1,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
-            <loc>https://shaleenjain.com/blog/example-content/</loc>
+            <loc>https://shaleenjain.com/butler/blog/example-content/</loc>
             
                 <lastmod>2015-05-19</lastmod>
             
         </url>
     
         <url>
-            <loc>https://shaleenjain.com/blog/first-post/</loc>
+            <loc>https://shaleenjain.com/butler/blog/first-post/</loc>
             
                 <lastmod>2018-07-01</lastmod>
             
@@ -16,15 +16,15 @@
     
     
         <url>
-            <loc>https://shaleenjain.com/</loc>
+            <loc>https://shaleenjain.com/butler/</loc>
         </url>
     
         <url>
-            <loc>https://shaleenjain.com/blog/</loc>
+            <loc>https://shaleenjain.com/butler/blog/</loc>
         </url>
     
         <url>
-            <loc>https://shaleenjain.com/donate/</loc>
+            <loc>https://shaleenjain.com/butler/donate/</loc>
         </url>
     
     

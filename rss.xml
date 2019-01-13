@@ -1,18 +1,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title></title>
-        <link>https://shaleenjain.com</link>
+        <link>https://shaleenjain.com/butler</link>
         <description></description>
         <generator>Zola</generator>
         <language>en</language>
-        <atom:link href="https://shaleenjain.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://shaleenjain.com/butler/rss.xml" rel="self" type="application/rss+xml"/>
         <lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
         
             <item>
                 <title>First post</title>
                 <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-                <link>https://shaleenjain.com/blog/first-post/</link>
-                <guid>https://shaleenjain.com/blog/first-post/</guid>
+                <link>https://shaleenjain.com/butler/blog/first-post/</link>
+                <guid>https://shaleenjain.com/butler/blog/first-post/</guid>
                 <description>&lt;h2 id=&quot;title&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#title&quot; aria-label=&quot;Anchor link for: title&quot;&gt;🔗&lt;&#x2F;a&gt;
 Title&lt;&#x2F;h2&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -27,8 +27,8 @@ in culpa qui officia deserunt mollit anim id est laborum.&lt;&#x2F;p&gt;
             <item>
                 <title>Example content</title>
                 <pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate>
-                <link>https://shaleenjain.com/blog/example-content/</link>
-                <guid>https://shaleenjain.com/blog/example-content/</guid>
+                <link>https://shaleenjain.com/butler/blog/example-content/</link>
+                <guid>https://shaleenjain.com/butler/blog/example-content/</guid>
                 <description>&lt;h2 id=&quot;inline-html-elements&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#inline-html-elements&quot; aria-label=&quot;Anchor link for: inline-html-elements&quot;&gt;🔗&lt;&#x2F;a&gt;
 Inline HTML elements&lt;&#x2F;h2&gt;
 &lt;p&gt;HTML defines a long list of available inline tags, a complete list of which can be found on the &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTML&#x2F;Element&quot;&gt;Mozilla Developer Network&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
