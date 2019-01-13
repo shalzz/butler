@@ -52,6 +52,10 @@ table {
   border-collapse: collapse;
 }
 
+.js-file-line-container td {
+    border: none;
+}
+
 td,
 th {
   padding: .25rem .5rem;
