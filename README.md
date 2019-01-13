@@ -1,6 +1,8 @@
 # Butler 
 Butler is a clean, responsive theme for [zola](https://github.com/getzola/zola).
 
+Demo: [See it in action](https://shaleenjain.com/butler)
+
 ## Contents
 
 - [Installation](#installation)
