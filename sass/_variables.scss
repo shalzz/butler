@@ -3,7 +3,7 @@ $font-family: 'Source Sans Pro', $font-fallback;
 $font-size: 16px;
 $line-height: 1.6;
 
-$min-width-breakpoint: 36em;
+$min-width-breakpoint: 42em;
 
 $body-padding: 2rem 1.5rem;
 $font-color: #444;
@@ -32,9 +32,5 @@ $code-background-color: darken(#fff, 3);
 $code-color: #bf616a;
 $code-border-color: darken($code-background-color, 8);
 $code-radius: 3px;
-
-$highlight-background-color: $code-background-color;
-$highlight-border-color: $code-border-color;
-$highlight-lineno-color: $divider-color;
 
 $post-date-color: $small-color;
