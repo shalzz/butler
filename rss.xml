@@ -1,0 +1,48 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title></title>
+        <link>https://shaleenjain.com</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://shaleenjain.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>First post</title>
+                <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+                <link>https://shaleenjain.com/blog/first-post/</link>
+                <guid>https://shaleenjain.com/blog/first-post/</guid>
+                <description>&lt;h2 id=&quot;title&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#title&quot; aria-label=&quot;Anchor link for: title&quot;&gt;🔗&lt;&#x2F;a&gt;
+Title&lt;&#x2F;h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+in culpa qui officia deserunt mollit anim id est laborum.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Example content</title>
+                <pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate>
+                <link>https://shaleenjain.com/blog/example-content/</link>
+                <guid>https://shaleenjain.com/blog/example-content/</guid>
+                <description>&lt;h2 id=&quot;inline-html-elements&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#inline-html-elements&quot; aria-label=&quot;Anchor link for: inline-html-elements&quot;&gt;🔗&lt;&#x2F;a&gt;
+Inline HTML elements&lt;&#x2F;h2&gt;
+&lt;p&gt;HTML defines a long list of available inline tags, a complete list of which can be found on the &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTML&#x2F;Element&quot;&gt;Mozilla Developer Network&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;To bold text&lt;&#x2F;strong&gt;, use &lt;code&gt;&amp;lt;strong&amp;gt;&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;To italicize text&lt;&#x2F;em&gt;, use &lt;code&gt;&amp;lt;em&amp;gt;&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Abbreviations, like &lt;abbr title=&quot;HyperText Markup Langage&quot;&gt;HTML&lt;&#x2F;abbr&gt; should use &lt;code&gt;&amp;lt;abbr&amp;gt;&lt;&#x2F;code&gt;, with an optional &lt;code&gt;title&lt;&#x2F;code&gt; attribute for the full phrase.&lt;&#x2F;li&gt;
+&lt;li&gt;Citations, like &lt;cite&gt;— Mark otto&lt;&#x2F;cite&gt;, should use &lt;code&gt;&amp;lt;cite&amp;gt;&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;del&gt;Deleted&lt;&#x2F;del&gt; text should use &lt;code&gt;&amp;lt;del&amp;gt;&lt;&#x2F;code&gt; and &lt;ins&gt;inserted&lt;&#x2F;ins&gt; text should use &lt;code&gt;&amp;lt;ins&amp;gt;&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Superscript &lt;sup&gt;text&lt;&#x2F;sup&gt; uses &lt;code&gt;&amp;lt;sup&amp;gt;&lt;&#x2F;code&gt; and subscript &lt;sub&gt;text&lt;&#x2F;sub&gt; uses &lt;code&gt;&amp;lt;sub&amp;gt;&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Most of these elements are styled by browsers with few modifications on our part.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>
