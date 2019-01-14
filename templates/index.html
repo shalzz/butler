@@ -28,7 +28,6 @@
 
     {% block meta %}
         <meta name="author" content="{{ config.extra.author.name }}">
-        <meta name="google-site-verification" content="_ijLw3IDjPBi5dax4x3X5dOORspgEgZmCOeoc3TZa0Q" />
 
         <link rel="author" href="{{ config.extra.author.twitter.link }}">
         <link href="{{ current_url }}" rel="canonical">
@@ -73,13 +72,9 @@
     {# feed_meta #}
 
     {% block css %}
-        <link rel="stylesheet" href="{{ get_url(path="critical.css", cachebust=true) }}"> {# inline #}
+        <link rel="stylesheet" href="{{ get_url(path="critical.css", cachebust=true) }}"> {# TODO: inline #}
         <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
     {% endblock css %}
-
-    {% block js %}
-          <script src="{{ get_url(path="cssrelpreload.js", cachebust=true) }}"></script>
-    {% endblock js %}
 
   </head>
   <body>
