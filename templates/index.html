@@ -30,7 +30,11 @@
         <meta name="author" content="{{ config.extra.author.name }}">
 
         <link rel="author" href="{{ config.extra.author.twitter.link }}">
-        <link href="{{ current_url }}" rel="canonical">
+        {% if current_url %}
+            <link href="{{ current_url }}" rel="canonical">
+        {% else %}
+            <link href="{{ config.base_url ~ "/404.html" }}" rel="canonical">
+        {% endif %}
     {% endblock meta %}
 
     {% block og_card %}
@@ -38,12 +42,14 @@
         <meta name="twitter:creator" content="@{{ config.extra.author.twitter.username }}">
 
         <meta property="og:type" content="article">
-        <meta property="og:url" content="{{ current_url }}">
+        {% if current_url %}
+            <meta property="og:url" content="{{ current_url }}">
+        {% else %}
         <meta property="og:site_name" content="{{ config.title }}">
 
         {% if page.extra.card %}
         <meta name="twitter:card" content="{{ page.extra.card }}">
-        {% else %}
+        {% endif %}
         <meta name="twitter:card" content="summary">
         {% endif %}
 
