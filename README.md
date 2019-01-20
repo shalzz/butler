@@ -23,16 +23,19 @@ and then enable it in your `config.toml`:
 theme = "butler"
 ```
 
-This theme provides an additional template `blog.html` that lists all the pages in a section.
+This theme provides an additional template `blog.html` that
+paginates all the pages in a section.
 To use it enable in your section frontmatter.
 
 ```
 +++
 template = "blog.html"
-permalink = "/blog/"
 sort_by = "date"
+paginate_by = 10
 +++
 ```
+
+All the three options above are required for the blog template to work properly.
 
 ## Options
 
