@@ -2,39 +2,48 @@
 {% import "macros.html" as macros %}
 
 {% block seccontent %}
-{% for post in section.pages %}
-  {% set this_year = post.date | date(format="%Y") %}
-  {% set pre_year = "" %}
-  {% if post.earlier.date %}
-    {% set pre_year = post.earlier.date | date(format="%Y") %}
-  {% endif %}
+    {% for post in paginator.pages %}
+      {% set this_year = post.year %}
 
-  {% if loop.first %}
-    <h2 class="text-right">{{this_year}}</h2>
-    <nav class="posts">
-  {% endif %}
-
-    <div class="posts-item">
-      <time class="post-date" datetime="{{ post.date | date(format="%Y-%m-%dT%H:%M:%S") }}">
-          {{ post.date | date(format="%B %d") }}
-            · {{ macros::read_time(words=post.word_count) }}
-      </time>
-      <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
-      {% if post.extra.image %}
-        <img src="{{ resize_image(path=post.path ~ post.extra.image,
-                        width=1600, height=1600, op="fit" ) }}" />
+      {% if loop.first %}
+        <h2 class="text-right">{{this_year}}</h2>
+        <nav class="posts">
       {% endif %}
-        {{ post.summary | safe | striptags | replace(from="🔗", to="") }}
-    </div>
 
-  {% if loop.last %}
-    </nav>
-  {% else %}
-    {% if this_year != pre_year %}
-      </nav>
-      <h2 class="text-right">{{pre_year}}</h2>
-      <nav class="posts">
-    {% endif %}
-  {% endif %}
-{% endfor %}
+        <div class="posts-item">
+          <time class="post-date" datetime="{{ post.date | date(format="%Y-%m-%dT%H:%M:%S") }}">
+              {{ post.date | date(format="%B %d") }}
+                · {{ macros::read_time(words=post.word_count) }}
+          </time>
+          <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+          {% if post.extra.image %}
+            <img src="{{ resize_image(path=post.path ~ post.extra.image,
+                            width=1600, height=1600, op="fit" ) }}" />
+          {% endif %}
+            {{ post.summary | safe | striptags | replace(from="🔗", to="") }}
+        </div>
+
+      {% if loop.last %}
+        </nav>
+      {% else %}
+        {% set next_index = loop.index0+1 %}
+        {% set pre_year = paginator.pages[next_index].year %}
+        {% if this_year != pre_year %}
+          </nav>
+          <h2 class="text-right">{{pre_year}}</h2>
+          <nav class="posts">
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% block pagination %}
+        <nav class="pagination">
+            {% if paginator.previous %}
+                <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+            {% endif %}
+            {% if paginator.next %}
+                <a class="next" href="{{ paginator.next }}">Next ›</a>
+            {% endif %}
+        </nav>
+    {% endblock pagination %}
 {% endblock seccontent %}
