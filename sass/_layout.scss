@@ -194,3 +194,24 @@
     }
   }
 }
+
+.next, .previous {
+  font-weight: 600;
+  font-size: 20px;
+  transition: transform 0.3s ease-out;
+
+}
+
+.next {
+  float: right;
+  &:hover {
+    transform: translateX(4px);
+  }
+}
+
+.previous {
+  float: left;
+  &:hover {
+    transform: translateX(-4px);
+  }
+}
