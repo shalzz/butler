@@ -1,6 +1,7 @@
   /* latin-ext */
   @font-face {
     font-family: 'Source Sans Pro';
+    font-display: fallback;
     font-style: italic;
     font-weight: 400;
     src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMyVjDpjOAxwEYJFCET2nD1s.woff2) format('woff2');
@@ -9,6 +10,7 @@
   /* latin */
   @font-face {
     font-family: 'Source Sans Pro';
+    font-display: fallback;
     font-style: italic;
     font-weight: 400;
     src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM2Sl3jWJ3D9poyJPMfASioc.woff2) format('woff2');
@@ -17,6 +19,7 @@
   /* latin-ext */
   @font-face {
     font-family: 'Source Sans Pro';
+    font-display: fallback;
     font-style: normal;
     font-weight: 400;
     src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlIa1YDtoarzwSXxTHggEXMw.woff2) format('woff2');
@@ -25,6 +28,7 @@
   /* latin */
   @font-face {
     font-family: 'Source Sans Pro';
+    font-display: fallback;
     font-style: normal;
     font-weight: 400;
     src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format('woff2');
@@ -33,6 +37,7 @@
   /* latin-ext */
   @font-face {
     font-family: 'Source Sans Pro';
+    font-display: fallback;
     font-style: normal;
     font-weight: 700;
     src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGO4s1Ux4PuImWPk5fSr6HPL3rGVtsTkPsbDajuO5ueQw.woff2) format('woff2');
@@ -41,6 +46,7 @@
   /* latin */
   @font-face {
     font-family: 'Source Sans Pro';
+    font-display: fallback;
     font-style: normal;
     font-weight: 700;
     src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGJkF8H8ye47wsfpWywda8og.woff2) format('woff2');
