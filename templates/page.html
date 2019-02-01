@@ -6,11 +6,7 @@
 {% endblock title %}
 
 {% block description %}
-    {% if page.excerpt %}
-      <meta name="description" content="{{ page.excerpt | strip_html }}">
-    {% elif page.description %}
-      <meta name="description" content="{{ page.description }}">
-    {% endif %}
+    <meta name="description" content="{{ page.summary | striptags }}">
 
     {% if page.extra.tags %}
         <meta name="keywords" content="{{ config.extra.keywords ~ ', ' ~ page.extra.tags }}">
