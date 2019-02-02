@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xml" href="{{ config.base_url ~ '/feed.xslt.xml' }}"?>
+<feed xmlns="http://www.w3.org/2005/Atom" {% if config.default_language %}xml:lang="{{ config.default_language }}"{% endif %}>
+  <generator uri="https://getzola.org/" >Zola</generator>
+  <link href="{{ config.base_url ~ '/rss.xml' }}" rel="self" type="application/atom+xml" />
+  <link href="{{ config.base_url }}" rel="alternate" type="text/html" {% if config.default_language %}xml:lang="{{ config.default_language }}"{% endif %}/>
+  <updated>{{ last_build_date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
+  <id>{{ config.base_url }}</id>
+
+  <title type="html">{{ config.title }}</title>
+
+  <subtitle>{{ config.description }}</subtitle>
+
+  {% if config.extra.author %}
+    <author>
+        <name>{{ config.extra.author.name }}</name>
+      {% if config.extra.author.email %}
+        <email>{{ config.extra.author.email }}</email>
+      {% endif %}
+      {% if config.extra.author.uri %}
+        <uri>{{ config.extra.author.uri }}</uri>
+      {% endif %}
+    </author>
+  {% endif %}
+
+  {% for post in pages %}
+    <entry{% if post.lang %}{{" "}}xml:lang="{{ post.lang }}"{% endif %}>
+      <title type="html">{{ post.title }}</title>
+      <link href="{{ post.permalink | safe }}" rel="alternate" type="text/html" title="{{ post.title }}" />
+      <published>{{ post.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</published>
+      <updated>{{ post.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
+      <id>{{ post.permalink | safe }}</id>
+      <content type="html" xml:base="{{ post.permalink | safe }}">{{ post.content }}</content>
+
+      {% if post.extra.tags %}
+      {% for tag in post.extra.tags %}
+        <category term="{{ tag | xml_escape }}" />
+      {% endfor %}
+      {% endif %}
+
+      {% if post.summary %}
+        <summary type="html">{{ post.summary | striptags }}</summary>
+      {% endif %}
+
+      {#
+      {% assign post_image = post.image.path | default: post.image %}
+      {% if post_image %}
+        {% unless post_image contains "://" %}
+          {% assign post_image = post_image | absolute_url %}
+        {% endunless %}
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ post_image | xml_escape }}" />
+      {% endif %}
+      #}
+
+    </entry>
+  {% endfor %}
+</feed>
