@@ -33,9 +33,12 @@
       <content type="html" xml:base="{{ post.permalink | safe }}">{{ post.content }}</content>
 
       {% if post.extra.tags %}
+      {#
       {% for tag in post.extra.tags %}
-        <category term="{{ tag | xml_escape }}" />
+        <category term="{{ tag }}" />
       {% endfor %}
+      #}
+        <category term="{{ post.extra.tags }}" />
       {% endif %}
 
       {% if post.summary %}

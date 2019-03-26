@@ -1,6 +1,7 @@
 +++
 title="Example content"
 [extra]
+tags="hello, example, this , is"
 +++
 
 ## Inline HTML elements
