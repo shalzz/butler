@@ -46,7 +46,7 @@
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
 
-  {{ page.content | safe }}
+  {{ page.content | safe | replace(from="<!-- toc -->", to=macros::toc(toc=toc))}}
 </article>
 
 
