@@ -49,6 +49,14 @@
   {{ page.content | safe | replace(from="<!-- toc -->", to=macros::toc(toc=toc))}}
 </article>
 
+{% block tippin %}
+<div>
+ Liked this article? Buy me a coffee on the Bitcoin Lightning Network
+<div id="tippin-button" data-dest="{{ config.extra.author.twitter.username }}"></div>
+<script src="https://tippin.me/buttons/tip.js" type="text/javascript"></script>
+<br/>
+</div>
+{% endblock tippin %}
 
 {% block post_message %}
   <p>Got any questions or comments? Drop me a message on <a href="{{ config.extra.author.twitter.link }}" rel="nofollow">Twitter @{{ config.extra.author.twitter.username }}</a> or comment below.</p>
