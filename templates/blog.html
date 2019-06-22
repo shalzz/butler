@@ -20,7 +20,7 @@
             <img src="{{ resize_image(path=post.path ~ post.extra.image,
                             width=1600, height=1600, op="fit" ) }}" />
           {% endif %}
-            {{ post.summary | safe | striptags | replace(from="🔗", to="") }}
+            {{ post.summary | striptags | replace(from="🔗", to="") | safe }}
         </div>
 
       {% if loop.last %}
