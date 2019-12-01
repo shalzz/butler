@@ -1,5 +1,6 @@
 +++
 title="Example content"
+draft=true
 [extra]
 tags="hello, example, this , is"
 +++

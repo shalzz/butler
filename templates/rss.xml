@@ -23,7 +23,7 @@
     </author>
   {% endif %}
 
-  {% for post in pages %}
+  {% for post in pages | filter(attribute="draft", value=false) %}
     <entry{% if post.lang %}{{" "}}xml:lang="{{ post.lang }}"{% endif %}>
       <title type="html">{{ post.title }}</title>
       <link href="{{ post.permalink | safe }}" rel="alternate" type="text/html" title="{{ post.title }}" />

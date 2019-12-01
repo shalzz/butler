@@ -2,7 +2,7 @@
 {% import "macros.html" as macros %}
 
 {% block seccontent %}
-    {% for post in paginator.pages %}
+    {% for post in paginator.pages | filter(attribute="draft", value=false) %}
       {% set this_year = post.year %}
 
       {% if loop.first %}
