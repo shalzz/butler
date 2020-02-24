@@ -46,7 +46,7 @@
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
 
-  {{ page.content | replace(from="<!-- toc -->", to=macros::toc(toc=toc)) | safe }}
+  {{ page.content | replace(from="<!-- toc -->", to=macros::toc(toc=page.toc)) | safe }}
 </article>
 
 {% block tippin %}
