@@ -31,7 +31,7 @@
         <title>{{ page.title }}</title>
         <link href="{{ page.permalink | safe }}" type="text/html"/>
         <published>{{ page.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</published>
-        <updated>{{ page.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
+        <updated>{{ page.updated  | default(value=page.date) | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
         <id>{{ page.permalink | safe }}</id>
         <content type="html" xml:base="{{ page.permalink | safe }}">{{ page.content }}</content>
 
