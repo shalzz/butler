@@ -1,26 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xml" href="{{ config.base_url ~ '/feed.xslt.xml' }}"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
-	<title>{{ config.title }}
-		{%- if term %} - {{ term.name }}
-		{%- endif -%}
-	</title>
-	{%- if config.description %}
-	<subtitle>{{ config.description }}</subtitle>
-	{%- endif %}
-	<link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
-	<link href="{{ config.base_url | safe }}"/>
-	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>{{ last_updated | date(format="%+") }}</updated>
-	<id>{{ feed_url | safe }}</id>
-	{%- for page in pages %}
-	<entry xml:lang="{{ page.lang }}">
-		<title>{{ page.title }}</title>
-		<published>{{ page.date | date(format="%+") }}</published>
-		<updated>{{ page.updated | default(value=page.date) | date(format="%+") }}</updated>
-		<link href="{{ page.permalink | safe }}" type="text/html"/>
-		<id>{{ page.permalink | safe }}</id>
-		<content type="html">{{ page.content }}</content>
-	</entry>
-	{%- endfor %}
+    <title>{{ config.title }}
+            {%- if term %} - {{ term.name }}
+            {%- endif -%}
+    </title>
+    {%- if config.description %}
+    <subtitle>{{ config.description }}</subtitle>
+    {%- endif %}
+    <link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
+    <link href="{{ config.base_url | safe }}" rel="alternate" type="text/html" />
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>{{ last_updated | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
+    <id>{{ feed_url | safe }}</id>
+
+    {% if config.extra.author %}
+    <author>
+        <name>{{ config.extra.author.name }}</name>
+      {% if config.extra.author.email %}
+        <email>{{ config.extra.author.email }}</email>
+      {% endif %}
+      {% if config.extra.author.uri %}
+        <uri>{{ config.extra.author.uri }}</uri>
+      {% endif %}
+    </author>
+    {% endif %}
+
+    {%- for page in pages | filter(attribute="draft", value=false) %}
+    <entry xml:lang="{{ page.lang }}">
+        <title>{{ page.title }}</title>
+        <link href="{{ page.permalink | safe }}" type="text/html"/>
+        <published>{{ page.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</published>
+        <updated>{{ page.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
+        <id>{{ page.permalink | safe }}</id>
+        <content type="html" xml:base="{{ page.permalink | safe }}">{{ page.content }}</content>
+
+        {% if page.extra.tags %}
+          <category term="{{ page.extra.tags }}" />
+        {% endif %}
+
+        {% if page.summary %}
+          <summary type="html">{{ page.summary | striptags }}</summary>
+        {% endif %}
+
+    </entry>
+    {%- endfor %}
 </feed>
