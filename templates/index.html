@@ -33,8 +33,9 @@
         {% if current_url %}
             <link href="{{ current_url }}" rel="canonical">
         {% else %}
-            <link href="{{ config.base_url ~ "/404.html" }}" rel="canonical">
+            <link href="{{ get_url(path="/404.html") }}" rel="canonical">
         {% endif %}
+         <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
     {% endblock meta %}
 
     {% block og_card %}
@@ -118,7 +119,8 @@
             This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
             CC BY-SA 4.0</a> license.
           <br/>
-          <a href="{{config.base_url ~ "/rss.xml"}}">RSS Feed</a> • <a href="{{config.base_url ~ "/donate"}}">Support my work</a>!
+          <a href="{{ get_url(path=config.feed_filename) | safe }}">RSS Feed</a> •
+          <a href="{{ get_url(path="@/donate/_index.md") | safe }}">Support my work</a>!
           </small></p>
         </footer>
     {% endblock footer %}

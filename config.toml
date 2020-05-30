@@ -13,7 +13,7 @@ highlight_theme = "monokai"
 build_search_index = false
 
 # Whether to generate a RSS feed automatically
-generate_rss = true
+generate_feed = true
 
 [extra]
 butler_nav_bar = [
