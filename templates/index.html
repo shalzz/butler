@@ -61,8 +61,8 @@
     {% endblock og_card %}
 
     {% block og_image %}
-        <meta property="og:image" content="{{ get_url(path='logo.png', cachebust=true) }}">
-    {% endblock og_iimage %}
+        <meta property="og:image" content="{{ get_url(path='logo.png') }}">
+    {% endblock og_image %}
 
     {% block fav_icon %}
         <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='icons/apple-touch-icon.png') }}">
@@ -81,7 +81,7 @@
         <style>
             {{ load_data(path="./public/critical.css") | safe }}
         </style>
-        <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
+        <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
     {% endblock css %}
 
     {% block font %}
