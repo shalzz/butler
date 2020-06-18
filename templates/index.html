@@ -9,18 +9,6 @@
 
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
-    {% block analytics %}
-          <!-- Global Site Tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.google_analytics.id }}"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', '{{ config.extra.google_analytics.id }}');
-        </script>
-    {% endblock analytics %}
-
     {% block description %}
         <meta name="description" content="{{ config.description }}">
         <meta name="keywords" content="{{ config.extra.keywords }}">
@@ -125,5 +113,16 @@
         </footer>
     {% endblock footer %}
 
+    {% block analytics %}
+          <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.google_analytics.id }}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '{{ config.extra.google_analytics.id }}');
+        </script>
+    {% endblock analytics %}
   </body>
 </html>
