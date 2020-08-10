@@ -30,5 +30,5 @@ twitter.link = "https://twitter.com/username"
 [extra.disqus]
 shortname = "shortname"
 
-[extra.google_analytics]
-id = "UA-4XXXXXXX-X"
+[extra.analytics]
+code = ""
