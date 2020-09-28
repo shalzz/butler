@@ -2,7 +2,7 @@ code, pre {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
-code {
+p code {
   padding: .25em .5em;
   font-size: .75em;
   color: $code-color;
@@ -16,6 +16,4 @@ pre {
   margin-bottom: 1rem;
   padding: 5px;
   font-size: 85%;
-  color: inherit;
-  background-color: transparent;
 }
