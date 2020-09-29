@@ -1,2 +1,2 @@
-<img src="{{ resize_image(path=page.path~path, width=1600, height=1600, op="fit") }}"
-                {% if class %}class="{{class}}"{% endif %} />
+{% set basepath = page.path | trim_start_matches(pat="/") %}
+<img src="{{ resize_image(path=basepath~path, width=1600, height=1600, op="fit") }}" {% if class %}class="{{class}}"{% endif %} />
