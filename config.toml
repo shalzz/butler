@@ -17,7 +17,7 @@ generate_feed = true
 
 [extra]
 butler_nav_bar = [
-    {url = "/blog/", name = "Blog"},
+    {url = "/blog", name = "Blog"},
 ]
 
 keywords = "zola theme"
