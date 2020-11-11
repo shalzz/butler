@@ -15,7 +15,7 @@
               {{ post.date | date(format="%B %d") }}
                 · {{ macros::read_time(words=post.word_count) }}
           </time>
-          <h3><a href=".{{ post.path }}">{{ post.title }}</a></h3>
+          <h3><a href="{{ post.path | safe }}">{{ post.title }}</a></h3>
           {% if post.extra.image %}
           {% set basepath = post.path | trim_start_matches(pat="/") %}
             <img src="{{ resize_image(path= basepath ~ post.extra.image,
