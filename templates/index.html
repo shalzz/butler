@@ -74,7 +74,10 @@
     {% endblock css %}
 
     {% block font %}
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+        {% set response = load_data(url="https://fonts.googleapis.com/css?family=Lora:400,400i,700&display=swap&subset=latin-ext") %}
+        <style>
+        {{ response | safe }}
+        </style>
     {% endblock font %}
   </head>
   <body>
