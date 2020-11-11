@@ -114,7 +114,7 @@
           </h3>
           <nav class="masthead-nav">
             {% for node in config.extra.butler_nav_bar %}
-            <a href="{{ node.url }}" class="nav-item">{{ node.name }}</a>
+            <a href="{{ node.url | replace(from="$BASE_URL", to="" ) }}" class="nav-item">{{ node.name }}</a>
             {% endfor %}
           </nav>
         </header>
