@@ -70,7 +70,7 @@
         <style>
             {{ load_data(path="./public/critical.css") | safe }}
         </style>
-        <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+        <link rel="preload" as="style" href="{{ get_url(path="style.css") }}">
     {% endblock css %}
 
     {% block font %}
