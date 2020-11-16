@@ -107,8 +107,7 @@
 
   <body>
     {% block css %}
-        <link rel="preload" as="style" href="{{ get_url(path="style.css") }}" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="{{ get_url(path="style.css") }}"></noscript>
+        <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
     {% endblock css %}
 
     {% block header %}
