@@ -4,16 +4,20 @@ base_url = "https://shaleenjain.com/butler"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Gutenberg
-highlight_code = true
-highlight_theme = "monokai"
-
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
 # Whether to generate a RSS feed automatically
 generate_feed = true
+
+# Configuration of the Markdown rendering
+[markdown]
+# When set to "true", all code blocks are highlighted.
+highlight_code = false
+
+# The theme to use for code highlighting.
+# See below for list of allowed values.
+highlight_theme = "monokai"
 
 [extra]
 butler_nav_bar = [
