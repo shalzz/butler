@@ -49,14 +49,12 @@
   {{ page.content | replace(from="<!-- toc -->", to=macros::toc(toc=page.toc)) | safe }}
 </article>
 
-{% block tippin %}
+{% block donate %}
 <div>
- Liked this article? Buy me a beer on the Bitcoin Lightning Network
-<div id="tippin-button" data-dest="{{ config.extra.author.twitter.username }}"></div>
-<script src="https://tippin.me/buttons/tip.js" type="text/javascript"></script>
-<br/>
+  Liked this article? Consider <a href="/donate">donating</a> to support my work.
 </div>
-{% endblock tippin %}
+<br/>
+{% endblock donate %}
 
 {% block post_message %}
   <p>Got any questions or comments? Drop me a message on <a href="{{ config.extra.author.twitter.link }}" rel="nofollow">Twitter @{{ config.extra.author.twitter.username }}</a> or comment below.</p>
