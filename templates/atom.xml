@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xml" href="{{ config.base_url ~ '/feed.xslt.xml' }}"?>
+<?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
     <title>{{ config.title }}
             {%- if term %} - {{ term.name }}

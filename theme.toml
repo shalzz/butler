@@ -7,7 +7,7 @@ demo = "https://gutenberg-even.netlify.com"
 
 [extra]
 butler_nav_bar = [
-    {url = "$BASE_URL/blog", name = "Blog"},
+    {url = "/blog", name = "Blog"},
 ]
 
 [author]
