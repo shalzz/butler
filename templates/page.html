@@ -60,9 +60,6 @@
   <p>Got any questions or comments? Drop me a message on <a href="{{ config.extra.author.twitter.link }}" rel="nofollow">Twitter @{{ config.extra.author.twitter.username }}</a> or comment below.</p>
 {% endblock post_message %}
 
-{% block comments %}
-{{ macros::disqus(page=page) }}
-{% endblock comments %}
 {# include related.html #}
 
 {% endblock content %}
