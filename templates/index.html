@@ -21,7 +21,7 @@
         {% if current_url %}
             <link href="{{ current_url }}" rel="canonical">
         {% else %}
-            <link href="{{ get_url(path="/404.html") }}" rel="canonical">
+            <link href="/404.html" rel="canonical">
         {% endif %}
          <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
     {% endblock meta %}
@@ -50,17 +50,17 @@
     {% endblock og_card %}
 
     {% block og_image %}
-        <meta property="og:image" content="{{ get_url(path='logo.png') }}">
+        <meta property="og:image" content="/logo.png">
     {% endblock og_image %}
 
     {% block fav_icon %}
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='icons/apple-touch-icon.png') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='icons/favicon-32x32.png') }}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path='icons/favicon-16x16.png') }}">
-        <link rel="manifest" href="{{ get_url(path='icons/manifest.json') }}">
-        <link rel="mask-icon" href="{{ get_url(path='icons/safari-pinned-tab.svg') }}">
-        <link rel="shortcut icon" href="{{ get_url(path='icons/favicon.ico') }}">
-        <meta name="msapplication-config" content="{{ get_url(path='icons/browserconfig.xml') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+        <link rel="manifest" href="/icons/manifest.json">
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+        <meta name="msapplication-config" content="/icons/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
     {% endblock fav_icon %}
 
@@ -80,7 +80,7 @@
           font-style: italic;
           font-weight: 400;
           font-display: swap;
-          src: url({{ get_url(path='fonts/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92nA.woff2') | safe }}) format('woff2');
+          src: url("/fonts/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92nA.woff2") format('woff2');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
         /* latin */
@@ -89,7 +89,7 @@
           font-style: normal;
           font-weight: 400;
           font-display: swap;
-          src: url({{ get_url(path='fonts/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkq0.woff2') | safe }}) format('woff2');
+          src: url("/fonts/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkq0.woff2") format('woff2');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
         /* latin */
@@ -98,7 +98,7 @@
           font-style: normal;
           font-weight: 700;
           font-display: swap;
-          src: url({{ get_url(path='fonts/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJBkq0.woff2') | safe }}) format('woff2');
+          src: url("/fonts/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJBkq0.woff2") format('woff2');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
       </style>
@@ -107,7 +107,7 @@
 
   <body>
     {% block css %}
-        <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+        <link rel="stylesheet" href="/style.css">
     {% endblock css %}
 
     {% block header %}
@@ -138,8 +138,8 @@
             This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
             CC BY-SA 4.0</a> license.
           <br/>
-          <a href="{{ get_url(path=config.feed_filename) | safe }}">RSS Feed</a> •
-          <a href="{{ get_url(path="@/donate/_index.md") | safe }}">Support my work</a>!
+          <a href="{{ "/" ~ config.feed_filename | safe }}">RSS Feed</a> •
+          <a href="/donate">Support my work</a>!
           </small></p>
         </footer>
     {% endblock footer %}
