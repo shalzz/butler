@@ -49,16 +49,16 @@
   {{ page.content | replace(from="<!-- toc -->", to=macros::toc(toc=page.toc)) | safe }}
 </article>
 
-{% block donate %}
+{% block post_message %}
 <div>
   Liked this article? Consider <a href="/donate">donating</a> to support my work.
 </div>
 <br/>
-{% endblock donate %}
-
-{% block post_message %}
-  <p>Got any questions or comments? Drop me a message on <a href="{{ config.extra.author.twitter.link }}" rel="nofollow">Twitter @{{ config.extra.author.twitter.username }}</a> or comment below.</p>
 {% endblock post_message %}
+
+{% block contact %}
+  <p>Got any questions or comments? Drop me a message on <a href="{{ config.extra.author.twitter.link }}" rel="nofollow">Twitter @{{ config.extra.author.twitter.username }}</a></p>
+{% endblock contact %}
 
 {# include related.html #}
 
