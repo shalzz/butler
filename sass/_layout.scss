@@ -79,13 +79,6 @@
 
   a {
       color: $link-color-masthead;
-
-//  &:hover,
-//  &:focus {
-//    background-color: white;
-//    color: black;
-//  }
-
   }
 
   .masthead-title {
@@ -97,9 +90,10 @@
       border: 0;
     }
 
-    @media (min-width: $min-width-breakpoint) {
-      float: left;
-    }
+    float: left;
+//    @media (min-width: $min-width-breakpoint) {
+//      float: left;
+//    }
   }
 
   .masthead-nav {
@@ -117,10 +111,13 @@
     }
   }
 
-  @media (min-width: $min-width-breakpoint) {
-    padding-top: 1rem;
-    text-align: right;
-  }
+  padding-top: 1rem;
+  text-align: right;
+
+//  @media (min-width: $min-width-breakpoint) {
+//    padding-top: 1rem;
+//    text-align: right;
+//  }
 
 }
 
