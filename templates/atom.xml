@@ -11,7 +11,7 @@
     <link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
     <link href="{{ config.base_url | safe }}" rel="alternate" type="text/html" />
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>{{ last_updated | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
+    <updated>{{ last_updated | date(format="%+", timezone="Asia/Kolkata") }}</updated>
     <id>{{ feed_url | safe }}</id>
 
     {% if config.extra.author %}
@@ -30,8 +30,9 @@
     <entry xml:lang="{{ page.lang }}">
         <title>{{ page.title }}</title>
         <link href="{{ page.permalink | safe }}" type="text/html"/>
-        <published>{{ page.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</published>
-        <updated>{{ page.updated  | default(value=page.date) | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
+        <pubDate>{{ page.date | date(format="%+", timezone="Asia/Kolkata") }}</pubDate>
+        <published>{{ page.date | date(format="%+", timezone="Asia/Kolkata") }}</published>
+        <updated>{{ page.updated  | default(value=page.date) | date(format="%+", timezone="Asia/Kolkata") }}</updated>
         <id>{{ page.permalink | safe }}</id>
         <content type="html" xml:base="{{ page.permalink | safe }}">{{ page.content }}</content>
 

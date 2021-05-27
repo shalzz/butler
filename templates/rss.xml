@@ -4,7 +4,7 @@
   <generator uri="https://getzola.org/" >Zola</generator>
   <link href="/rss.xml" rel="self" type="application/atom+xml" />
   <link href="{{ config.base_url }}" rel="alternate" type="text/html" {% if config.default_language %}xml:lang="{{ config.default_language }}"{% endif %}/>
-  <updated>{{ last_build_date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
+  <updated>{{ last_build_date | date(format="%+", timezone="Asia/Kolkata")  }}</updated>
   <id>{{ config.base_url }}</id>
 
   <title type="html">{{ config.title }}</title>
@@ -27,8 +27,9 @@
     <entry{% if post.lang %}{{" "}}xml:lang="{{ post.lang }}"{% endif %}>
       <title type="html">{{ post.title }}</title>
       <link href="{{ post.permalink | safe }}" rel="alternate" type="text/html" title="{{ post.title }}" />
-      <published>{{ post.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</published>
-      <updated>{{ post.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</updated>
+      <pubDate>{{ post.date | date(format="%+", timezone="Asia/Kolkata") }}</pubDate>
+      <published>{{ post.date | date(format="%+", timezone="Asia/Kolkata") }}</published>
+      <updated>{{ post.date | date(format="%+", timezone="Asia/Kolkata")  }}</updated>
       <id>{{ post.permalink | safe }}</id>
       <content type="html" xml:base="{{ post.permalink | safe }}">{{ post.content }}</content>
 
