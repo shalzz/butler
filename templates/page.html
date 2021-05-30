@@ -9,7 +9,7 @@
     <meta name="description" content="{{ page.summary | striptags }}">
 
     {% if page.extra.tags %}
-        <meta name="keywords" content="{{ config.extra.keywords ~ ', ' ~ page.extra.tags }}">
+        <meta name="keywords" content="{{ page.extra.tags }}">
     {% endif %}
 {% endblock description %}
 
