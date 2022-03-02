@@ -131,6 +131,9 @@
               {{ section.content | safe }}
             </article>
         {% endblock content %}
+
+        {% block subscribe %}
+        {% endblock subscribe %}
     </main>
 
     {% block footer %}
@@ -139,8 +142,7 @@
             This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
             CC BY-SA 4.0</a> license.
           <br/>
-          <a href="{{ "/" ~ config.feed_filename | safe }}">RSS Feed</a> •
-          <a href="/subscribe">Subscribe</a>!
+          <a href="{{ "/" ~ config.feed_filename | safe }}">RSS Feed</a>
           </small></p>
         </footer>
     {% endblock footer %}
