@@ -1,0 +1,26 @@
+<!-- As suggested on https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/set-up-twitter-for-websites -->
+<!-- TODO:
+            1) Add all the alignment/color modifiers in the conditional templating
+            2) Handle the case where uBlock origin is in action: instead of showing just a link, perhaps fetch some small portion of the content?
+-->
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+<div {% if class %}class="{{class}}"{% endif %} style="display: flex; justify-content: center;">
+    <blockquote class="twitter-tweet"><a href="{{ url }}"></a></blockquote>
+</div>
