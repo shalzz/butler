@@ -8,7 +8,7 @@ compile_sass = true
 build_search_index = false
 
 # Whether to generate a RSS feed automatically
-generate_feed = true
+generate_feeds = true
 
 # Configuration of the Markdown rendering
 [markdown]

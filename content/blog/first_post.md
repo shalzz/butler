@@ -2,7 +2,7 @@
 title = "First post"
 date = 2018-07-01
 
-[taxonomies]
+[extra]
 categories = ["Odd"]
 tags = ["placeholder posts", "tag1"]
 +++
