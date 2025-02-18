@@ -43,8 +43,8 @@
         <meta name="twitter:card" content="summary">
         {% endif %}
 
-        {% if page.excerpt %}
-        <meta property="og:description" content="{{ page.excerpt | strip_html }}">
+        {% if page.summary %}
+        <meta property="og:description" content="{{ page.summary | striptags }}">
         {% else %}
         <meta property="og:description" content="{{ config.description }}">
         {% endif %}
