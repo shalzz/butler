@@ -145,6 +145,9 @@
             CC BY-SA 4.0</a> license.
           <br/>
           <a href="{{ "/" ~ "atom.xml" | safe }}">RSS Feed</a>
+          {% if config.extra.donate %} 
+          &mdash; <a href="{{ "/" ~ "donate" | safe }}">Donate</a>
+          {% endif %}
           </small></p>
         </footer>
     {% endblock footer %}

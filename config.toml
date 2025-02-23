@@ -25,6 +25,7 @@ butler_nav_bar = [
 ]
 
 keywords = "zola theme"
+donate = false
 
 [extra.author]
 name = "The Wall"
