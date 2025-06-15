@@ -24,6 +24,9 @@
         {% set basepath = page.path | trim_start_matches(pat="/") %}
         <meta property="og:image" content="{{ get_url(path=basepath ~ page.extra.image, cachebust=true) }}">
         <meta property="twitter:image" content="{{ get_url(path=basepath ~ page.extra.image, cachebust=true) }}">
+    {% elif page.assets | length > 0 %}
+        <meta property="og:image" content="{{ get_url(path=page.assets[0], cachebust=true) }}">
+        <meta property="twitter:image" content="{{ get_url(path=page.assets[0], cachebust=true) }}">
     {% endif %}
 {% endblock og_image %}
 
