@@ -6,7 +6,9 @@
 {% endblock title %}
 
 {% block description %}
-    <meta name="description" content="{{ page.summary | striptags }}">
+    {% if page.summary %}
+        <meta name="description" content="{{ page.summary | striptags }}">
+    {% endif %}
 
     {% if page.extra.tags %}
         <meta name="keywords" content="{{ page.extra.tags }}">

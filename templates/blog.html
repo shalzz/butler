@@ -16,12 +16,15 @@
                 · {{ macros::read_time(words=post.word_count) }}
           </time>
           <h3><a href="{{ post.path | safe }}">{{ post.title }}</a></h3>
-          {% if post.extra.image %}
-          {% set basepath = post.path | trim_start_matches(pat="/") %}
-          {% set img = resize_image(path= basepath ~ post.extra.image, width=1600, height=1600, op="fit" ) %}
+          {% if post.extra.image and not config.extra.hide_summary %}
+            {% set basepath = post.path | trim_start_matches(pat="/") %}
+            {% set img = resize_image(path= basepath ~ post.extra.image, width=1600, height=1600, op="fit" ) %}
             <img src="{{ img.url }}" />
           {% endif %}
+
+          {% if post.summary and not config.extra.hide_summary %}
             {{ post.summary | striptags | replace(from="🔗", to="") | safe }}
+          {% endif %}
         </div>
 
       {% if loop.last %}
