@@ -2,7 +2,7 @@
 {% import "macros.html" as macros %}
 
 {% block title %}
-  {{ page.title }}
+  {{ config.title }} - {{ page.title }}
 {% endblock title %}
 
 {% block description %}
@@ -17,8 +17,8 @@
 
 {% block og_card %}
     {{ super() }}
-    <meta name="twitter:title" content="{{ page.title }}">
-    <meta property="og:title" content="{{ page.title }}">
+    <meta name="twitter:title" content="{{ config.title }} - {{ page.title }}">
+    <meta property="og:title" content="{{ config.title }} - {{ page.title }}">
 {% endblock og_card %}
 
 {% block og_image %}
