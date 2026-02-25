@@ -50,6 +50,14 @@
         <small>
             · {{ macros::read_time(words=page.word_count) }}
         </small>
+        <small style="float: right" >
+          {% if page.translations | length > 1 %}
+             友
+             {% for lang in page.translations %}
+             <a href="{{ lang.permalink }}" title="{{ lang.title }}">{{ lang.lang }}</a>
+             {% endfor %}
+          {% endif %}
+        </small>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
 
