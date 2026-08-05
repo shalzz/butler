@@ -37,13 +37,13 @@
         {% else %}
         <meta property="og:site_name" content="{{ config.title }}">
 
-        {% if page.extra.card %}
+        {% if page and page.extra.card %}
         <meta name="twitter:card" content="{{ page.extra.card }}">
         {% endif %}
         <meta name="twitter:card" content="summary">
         {% endif %}
 
-        {% if page.summary %}
+        {% if page and page.summary %}
         <meta property="og:description" content="{{ page.summary | striptags }}">
         {% else %}
         <meta property="og:description" content="{{ config.description }}">

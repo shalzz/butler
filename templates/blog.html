@@ -1,8 +1,7 @@
 {% extends "section.html" %}
-{% import "macros.html" as macros %}
 
 {% block seccontent %}
-    {% for post in paginator.pages | filter(attribute="draft", value=false) %}
+    {% for post in paginator.pages %}
       {% set this_year = post.year %}
 
       {% if loop.first %}
@@ -13,11 +12,11 @@
         <div class="posts-item">
           <time class="post-date" datetime="{{ post.date | date(format="%Y-%m-%dT%H:%M:%S") }}">
               {{ post.date | date(format="%B %d") }}
-                · {{ macros::read_time(words=post.word_count) }}
+                · {{ <read_time words={post.word_count} /> }}
           </time>
           <h3><a href="{{ post.path | safe }}">{{ post.title }}</a></h3>
           {% if post.extra.image and not config.extra.hide_summary %}
-            {% set basepath = post.path | trim_start_matches(pat="/") %}
+            {% set basepath = post.path | trim_start(pat="/") %}
             {% set img = resize_image(path= basepath ~ post.extra.image, width=1600, height=1600, op="fit" ) %}
             <img src="{{ img.url }}" />
           {% endif %}

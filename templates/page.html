@@ -1,5 +1,4 @@
 {% extends "index.html" %}
-{% import "macros.html" as macros %}
 
 {% block title %}
   {{ config.title }} - {{ page.title }}
@@ -23,7 +22,7 @@
 
 {% block og_image %}
     {% if page.extra.image %}
-        {% set basepath = page.path | trim_start_matches(pat="/") %}
+        {% set basepath = page.path | trim_start(pat="/") %}
         <meta property="og:image" content="{{ get_url(path=basepath ~ page.extra.image, cachebust=true) }}">
         <meta property="twitter:image" content="{{ get_url(path=basepath ~ page.extra.image, cachebust=true) }}">
     {% elif page.assets | length > 0 %}
@@ -48,7 +47,7 @@
           </small>
         {% endif %}
         <small>
-            · {{ macros::read_time(words=page.word_count) }}
+            · {{ <read_time words={page.word_count} /> }}
         </small>
         <div style="float: right" >
           {% if page.translations | length > 1 %}
@@ -63,7 +62,10 @@
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
 
-  {{ page.content | replace(from="<!-- toc -->", to=macros::toc(toc=page.toc)) | safe }}
+  {% set toc_html -%}
+  {{ <toc toc={page.toc} /> }}
+  {%- endset %}
+  {{ page.content | replace(from="<!-- toc -->", to=toc_html) | safe }}
 </article>
 
 {% block post_message %}

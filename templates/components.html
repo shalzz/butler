@@ -1,0 +1,58 @@
+{% component read_time(words: integer) -%}
+<span class="reading-time" title="Estimated read time">
+{% if words < 530 -%}
+1 min read
+{%- else -%}
+{{ (words / 265) | round | int }} min read
+{%- endif %}
+</span>
+{%- endcomponent %}
+
+{% component toc(toc: array) -%}
+{% if toc -%}
+<details open id="toc-inline">
+    <summary><b>Table of Contents</b></summary>
+    <ul>
+        {% for h2 in toc %}<li>
+            <a href="#{{h2.id | safe}}">{{ h2.title | safe }}</a>
+            {% if h2.children %}<ul>
+                {% for h3 in h2.children %}<li>
+                    <a href="#{{h3.id | safe}}">{{ h3.title | safe }}</a>
+                </li>{% endfor %}
+            </ul>{% endif %}
+        </li>{% endfor %}
+    </ul>
+</details>
+{%- endif %}
+{%- endcomponent %}
+
+{% component gist(url: string, class: string = "", file: string = "") -%}
+<div {% if class %}class="{{class}}"{% endif %}><script src="{{ url }}.js{% if file %}?file={{file}}{% endif %}"></script></div>
+{%- endcomponent %}
+
+{% component resize_image(page: map, path: string, class: string = "") -%}
+{% set basepath = page.path | trim_start(pat="/") %}
+{% set img = resize_image(path=basepath ~ path, width=1600, height=1600, op="fit") %}
+<img src="{{ img.url }}" {% if class %}class="{{class}}"{% endif %} />
+{%- endcomponent %}
+
+{% component tweet(url: string, class: string = "") -%}
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+<div {% if class %}class="{{class}}"{% endif %} style="display: flex; justify-content: center;"><blockquote class="twitter-tweet"><a href="{{ url }}"></a></blockquote></div>
+<br/>
+{%- endcomponent %}
