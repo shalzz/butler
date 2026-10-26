@@ -65,7 +65,7 @@
   {% set toc_html -%}
   {{ <toc toc={page.toc} /> }}
   {%- endset %}
-  {{ page.content | replace(from="<!-- toc -->", to=toc_html) | safe }}
+  {{ page.content | safe | replace(from="<!-- toc -->", to=toc_html) }}
 </article>
 
 {% block post_message %}
